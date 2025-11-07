@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import {
   CheckCircle,
   Search,
-  MapPin,
   Clock,
   TrendingDown,
   Zap,
@@ -39,14 +38,14 @@ function App() {
   }, []);
 
   const benefits = [
+    { icon: Zap, title: '営業自身で契約作成', description: '営業が現場で即座に契約を作成。今決めたいお客様を逃しません。' },
+    { icon: Users, title: '承認フローでリスク管理', description: '契約は承認を経て締結。営業の自由度とリスク管理を両立。' },
+    { icon: FileText, title: 'リフォーム業界に特化', description: '請負契約書に特化。重要事項説明など業界特有の要件にも対応。' },
+    { icon: Clock, title: '時間を大幅短縮', description: '郵送や印刷の時間を削減。最短即日で契約締結が可能になります。' },
     { icon: CheckCircle, title: '紛失リスクゼロ', description: 'クラウド管理で契約書を確実に保管。紛失の心配はもうありません。' },
     { icon: Search, title: '即座に検索', description: '必要な契約書を数秒で検索・閲覧。膨大な書類から探す手間を削減。' },
-    { icon: MapPin, title: '遠方対応が可能', description: '全国どこからでも契約締結。来店不要で顧客の利便性が向上します。' },
-    { icon: Clock, title: '時間を大幅短縮', description: '郵送や印刷の時間を削減。最短即日で契約締結が可能になります。' },
     { icon: TrendingDown, title: 'コスト削減', description: '印刷費・郵送費・保管費用を削減。年間数十万円のコスト削減を実現。' },
-    { icon: Zap, title: '業務効率化', description: '契約業務の工数を70%削減。より重要な業務に時間を割けます。' },
-    { icon: BarChart3, title: 'データ分析', description: '契約データを一元管理し、経営判断に活用できます。' },
-    { icon: FileText, title: 'フォーム化', description: 'テンプレート機能で入力ミスを防止。品質の標準化を実現します。' }
+    { icon: BarChart3, title: 'データ分析', description: '契約データを一元管理し、経営判断に活用できます。' }
   ];
 
   const comparison = [
@@ -144,12 +143,12 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center observe opacity-0">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              リフォーム契約を、<br />
-              <span className="text-orange-600">もっと簡単に。もっと安全に。</span>
+              <span className="text-orange-600">今決めたいお客様を、逃さない。</span>
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              紙の契約書の課題を解決する、リフォーム業界専門の電子契約システム。<br />
-              業務効率を劇的に改善し、顧客満足度を向上させます。
+              リフォーム業界専門の電子契約システムを開発中です。<br />
+              営業が現場で即座に契約を作成できる一方、承認フローでリスクもしっかり管理。<br />
+              導入をご検討いただくお客様の声を聞きながら、お困りごとを解消するシステムとして構築を進めております。
             </p>
             <a
               href="#cta"
@@ -170,12 +169,12 @@ function App() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
+                '今決めたいお客様を逃してしまう（契約締結までに時間がかかりすぎる）',
                 '契約書の保管場所が足りない',
                 '過去の契約書を探すのに時間がかかる',
                 '郵送費用・印刷費用がかさむ',
                 '遠方の顧客との契約が大変',
-                '契約書の紛失リスクが心配',
-                '契約締結までに時間がかかりすぎる'
+                '契約書の紛失リスクが心配'
               ].map((issue, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-orange-600">
                   <p className="text-gray-700 flex items-start">
@@ -200,21 +199,24 @@ function App() {
             </h2>
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
               Reform Contractは、リフォーム請負契約の業務フローを徹底的に分析し、<br />
-              現場のニーズに応える機能を搭載した専門システムです。
+              リフォーム業界の請負契約書に特化した専門システムとして開発を進めています。<br />
+              重要事項説明など、リフォーム業界特有の要件にも完全対応。<br />
+              導入をご検討いただくお客様のお困りごとをお聞かせいただき、<br />
+              より実用的なシステムとして育てていく所存です。
             </p>
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-10 rounded-2xl shadow-lg">
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
-                  <div className="text-5xl font-bold text-orange-600 mb-2">70%</div>
-                  <p className="text-gray-700">契約業務の<br />工数削減</p>
-                </div>
-                <div>
                   <div className="text-5xl font-bold text-orange-600 mb-2">即日</div>
-                  <p className="text-gray-700">最短契約<br />締結時間</p>
+                  <p className="text-gray-700">営業現場で<br />即座に契約締結</p>
                 </div>
                 <div>
-                  <div className="text-5xl font-bold text-orange-600 mb-2">0件</div>
-                  <p className="text-gray-700">紛失・漏洩<br />事故</p>
+                  <div className="text-5xl font-bold text-orange-600 mb-2">承認</div>
+                  <p className="text-gray-700">承認フローで<br />リスク管理</p>
+                </div>
+                <div>
+                  <div className="text-5xl font-bold text-orange-600 mb-2">特化</div>
+                  <p className="text-gray-700">リフォーム業界<br />完全対応</p>
                 </div>
               </div>
             </div>
@@ -226,7 +228,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto observe opacity-0">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-              8つの導入メリット
+              導入メリット
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => {
@@ -288,34 +290,34 @@ function App() {
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
+                  title: '営業自身で契約作成',
+                  description: '営業が現場で即座に契約を作成可能。今決めたいお客様を逃しません。',
+                  icon: Zap
+                },
+                {
+                  title: '承認フロー管理',
+                  description: '契約は承認を経て締結。営業の自由度を保ちながら、リスクもしっかり管理。',
+                  icon: Users
+                },
+                {
+                  title: 'リフォーム業界特化',
+                  description: '請負契約書に特化。重要事項説明など、リフォーム業界特有の要件にも完全対応。',
+                  icon: FileText
+                },
+                {
                   title: 'テンプレート管理',
                   description: 'よく使う契約書をテンプレート化。入力項目を自動化し、作成時間を大幅短縮。',
-                  icon: FileText
+                  icon: FileCheck
                 },
                 {
                   title: '電子署名・押印',
                   description: '法的効力のある電子署名を簡単に付与。スマホからでも署名可能。',
-                  icon: FileCheck
-                },
-                {
-                  title: 'ワークフロー管理',
-                  description: '契約の承認フローを設定可能。複数人での確認・承認をスムーズに。',
-                  icon: Users
-                },
-                {
-                  title: 'クラウド保管',
-                  description: '契約書を安全にクラウド保管。いつでもどこからでもアクセス可能。',
                   icon: Shield
                 },
                 {
-                  title: '高度な検索機能',
-                  description: '顧客名、日付、金額など様々な条件で瞬時に検索。必要な契約書をすぐに発見。',
+                  title: 'クラウド保管・検索',
+                  description: '契約書を安全にクラウド保管。顧客名、日付など様々な条件で瞬時に検索可能。',
                   icon: Search
-                },
-                {
-                  title: 'データ分析・レポート',
-                  description: '契約データを自動集計。経営判断に活用できるレポートを生成。',
-                  icon: BarChart3
                 }
               ].map((feature, index) => {
                 const Icon = feature.icon;
@@ -428,8 +430,8 @@ function App() {
               まずは無料オンライン相談から
             </h2>
             <p className="text-xl mb-10 opacity-90 leading-relaxed">
-              専門スタッフが貴社の課題をヒアリングし、<br />
-              最適な導入プランをご提案いたします。
+              システム開発中につき、導入をご検討いただくお客様のお困りごとをお聞かせください。<br />
+              いただいたご意見を反映しながら、より良いシステムとして構築を進めております。
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-10">
               <div className="grid md:grid-cols-3 gap-6 text-center">
